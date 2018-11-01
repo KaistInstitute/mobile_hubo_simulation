@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/rainbow/.gazebo/models/mobile_hubo_OW/mobile_hubo_OW.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/mobile_hubo_OW.srdf
+  CONFIG:
+    author_name: m
+    author_email: m@g.com
+    generated_timestamp: 1540986141
