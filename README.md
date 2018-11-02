@@ -1,1 +1,39 @@
-test
+# Mobile_Hubo Simulation File 
+
+Mobile_Hubo is a mobile_based version of DRC_HUBO with improved vision system.   <br />
+Simulation file is available for KAIST Research Labs for collaboration.
+
+
+### Setting up Simulation
+
+* git clone this repository into your catkin workspace
+```sh
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/KaistInstitute/mobile_hubo_simulation.git
+```
+
+* copy the folders in model directory under gazebo directory
+```sh
+$ cd mobile_hubo_simulation/models
+$ mv * ~/.gazebo/models
+```
+
+* build
+```sh
+$ cd ~/catkin
+$ catkin_make
+```
+
+
+### Running Simulation
+* Open terminal and start roscore
+
+```sh
+$ roslaunch mobile_hubo_ow mobile_hubo_ow.launch
+```
+
+
+Maintainers
+----
+
+KAIST HUBO LABS - ML634@kaist.ac.kr
