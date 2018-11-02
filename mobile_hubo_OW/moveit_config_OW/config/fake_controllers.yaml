@@ -1,6 +1,0 @@
-controller_list:
-  - name: fake_base_controller
-    joints:
-      - WHBASE
-      - whbase_to_lwh
-      - whbase_to_rwh

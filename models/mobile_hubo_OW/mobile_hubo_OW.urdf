@@ -8,6 +8,24 @@
   <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
 
+
+  <!-- base footprint -->
+  <link name="base_footprint">
+<!--    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+-->
+  </link>
+
+  <joint name="base_footprint_joint" type="floating">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Body_TORSO" />
+    <child link="base_footprint" />
+  </joint>
+
    <!--BODY TORSO-->
   <link name="Body_TORSO">
     <inertial>
@@ -30,7 +48,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_TORSO.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_TORSO.STL" />
       </geometry>
       <material
         name="">
@@ -44,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_TORSO_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_TORSO_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -88,7 +106,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LSP.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LSP.STL" />
       </geometry>
       <material
         name="">
@@ -102,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LSP_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LSP_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -142,7 +160,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LSR.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LSR.STL" />
       </geometry>
       <material
         name="">
@@ -156,7 +174,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LSR_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LSR_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -196,7 +214,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LSY.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LSY.STL" />
       </geometry>
       <material
         name="">
@@ -210,7 +228,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LSY_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LSY_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -250,7 +268,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LEB.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LEB.STL" />
       </geometry>
       <material
         name="">
@@ -264,7 +282,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LEB_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LEB_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -304,7 +322,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LWY.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LWY.STL" />
       </geometry>
       <material
         name="">
@@ -318,7 +336,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LWY_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LWY_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -358,7 +376,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LWP.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LWP.STL" />
       </geometry>
       <material
         name="">
@@ -372,7 +390,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LWP_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LWP_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -412,7 +430,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LWFT.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LWFT.STL" />
       </geometry>
       <material
         name="">
@@ -426,558 +444,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_LWFT_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_LWFT_col.STL" />
       </geometry>
     </collision>
   </link>
 
-<!--
-  <joint name="LWY2" type="revolute">
-    <origin
-      xyz="0 0 0.0326"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LWFT" />
-    <child
-      link="Body_LF1" />
-    <axis
-      xyz="0 0 1" />
-    <limit effort="100000" velocity="1.0" lower="-5" upper="5" />
-    <dynamics damping="200" friction="200" />
-  </joint>
-
-  <link name="Body_LF1">
-    <inertial>
-      <origin
-        xyz="0.00350179 0.00500094 -0.108683"
-        rpy="0 0 0" />
-      <mass
-        value="0.894667" />
-      <inertia
-        ixx="0.00087045"
-        ixy="-1.448e-05"
-        ixz="-1.064e-05"
-        iyy="0.00103972"
-        iyz="-7.89e-06"
-        izz="0.00095329" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry><mesh
-          filename="package://drc_plugin/meshes/Body_LF1.STL" />
-      </geometry>
-      <material
-        name="">
-	<color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF1_col.STL" />
-      </geometry>
-    </collision>
-  </link>
--->
-
-<!-- LEFT HAND -->
-<!-- LEFT HAND -->
-<!-- LEFT HAND -->
-<!--
-  <joint name="LHAND_a1" type="revolute">
-    <origin
-      xyz="0.02498 -0.023 -0.1471"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LF1" />
-    <child
-      link="Body_LF2_a1" />
-    <axis
-      xyz="0 1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_a1">
-    <inertial>
-      <origin
-        xyz="-0.0228526 -0.00016373 -0.0095261"
-        rpy="0 0 0" />
-      <mass
-        value="0.038683" />
-      <inertia
-        ixx="1.143e-04"
-        ixy="7e-06"
-        ixz="-6.53e-05"
-        iyy="2.17e-04"
-        iyz="-1e-05"
-        izz="1.314e-04" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_a1.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_a1_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="LHAND_a2" type="revolute">
-    <origin
-      xyz="0.03889 0 -0.0388"
-      rpy="0 0.7854 0" />
-    <parent
-      link="Body_LF2_a1" />
-    <child
-      link="Body_LF2_a2" />
-    <axis
-      xyz="0 1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_a2">
-    <inertial>
-      <origin
-        xyz="0.0183473 -5.73e-06 0.00742064"
-        rpy="0 0 0" />
-      <mass
-        value="0.021949" />
-      <inertia
-        ixx="2.31e-05"
-        ixy="9e-06"
-        ixz="-4.6e-06"
-        iyy="7.09e-05"
-        iyz="-5e-06"
-        izz="6.69e-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_a2.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_a3_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="LHAND_a3" type="revolute">
-    <origin
-      xyz="0.04 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LF2_a2" />
-    <child
-      link="Body_LF2_a3" />
-    <axis
-      xyz="0 1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_a3">
-    <inertial>
-      <origin
-        xyz="0.00112468 -3.724e-05 0.00681838"
-        rpy="0 0 0" />
-      <mass
-        value="0.0115" />
-      <inertia
-        ixx="7.2e-05"
-        ixy="1e-06"
-        ixz="2.9e-05"
-        iyy="1.67e-05"
-        iyz="1e-06"
-        izz="1.84e-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_a3.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_RF2_a3_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-
-  <joint name="LHAND_b1" type="revolute">
-    <origin
-      xyz="0.02498 0.0232 -0.1471"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LF1" />
-    <child
-      link="Body_LF2_b1" />
-    <axis
-      xyz="0 1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_b1">
-    <inertial>
-      <origin
-        xyz="-0.0228526 -0.00016373 -0.0095261"
-        rpy="0 0 0" />
-      <mass
-        value="0.038683" />
-      <inertia
-        ixx="1.143e-04"
-        ixy="7e-06"
-        ixz="-6.53e-05"
-        iyy="2.17e-04"
-        iyz="-1e-05"
-        izz="1.314e-04" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_b1.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_b1_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="LHAND_b2" type="revolute">
-    <origin
-      xyz="0.03889 0 -0.0388"
-      rpy="0 0.7854 0" />
-    <parent
-      link="Body_LF2_b1" />
-    <child
-      link="Body_LF2_b2" />
-    <axis
-      xyz="0 1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_b2">
-    <inertial>
-      <origin
-        xyz="0.0183473 -5.73e-06 0.00742064"
-        rpy="0 0 0" />
-      <mass
-        value="0.021949" />
-      <inertia
-        ixx="2.31e-05"
-        ixy="9e-06"
-        ixz="-4.6e-06"
-        iyy="7.09e-05"
-        iyz="-5e-06"
-        izz="6.69e-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_b2.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_b2_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="LHAND_b3" type="revolute">
-    <origin
-      xyz="0.04 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LF2_b2" />
-    <child
-      link="Body_LF2_b3" />
-    <axis
-      xyz="0 1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_b3">
-    <inertial>
-      <origin
-        xyz="0.00112468 -3.724e-05 0.00681838"
-        rpy="0 0 0" />
-      <mass
-        value="0.0115" />
-      <inertia
-        ixx="7.2e-05"
-        ixy="1e-06"
-        ixz="2.9e-05"
-        iyy="1.67e-05"
-        iyz="1e-06"
-        izz="1.84e-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_b3.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_b3_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-
-  <joint name="LHAND_c1" type="revolute">
-    <origin
-      xyz="-0.02502 0 -0.1471"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LF1" />
-    <child
-      link="Body_LF2_c1" />
-    <axis
-      xyz="0 -1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_c1">
-    <inertial>
-      <origin
-        xyz="-0.0228526 0.00016373 -0.0095261"
-        rpy="0 0 0" />
-      <mass
-        value="0.038683" />
-      <inertia
-        ixx="1.143e-04"
-        ixy="7e-06"
-        ixz="-6.53e-05"
-        iyy="2.17e-04"
-        iyz="-1e-05"
-        izz="1.314e-04" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_c1.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_c1_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="LHAND_c2" type="revolute">
-    <origin
-      xyz="-0.03889 0 -0.0388"
-      rpy="0 -0.7854 0" />
-    <parent
-      link="Body_LF2_c1" />
-    <child
-      link="Body_LF2_c2" />
-    <axis
-      xyz="0 -1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_c2">
-    <inertial>
-      <origin
-        xyz="-0.0183473 5.73e-06 0.00742064"
-        rpy="0 0 0" />
-      <mass
-        value="0.021949" />
-      <inertia
-        ixx="2.31e-05"
-        ixy="9e-06"
-        ixz="-4.6e-06"
-        iyy="7.09e-05"
-        iyz="-5e-06"
-        izz="6.69e-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_c2.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_c2_col.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="LHAND_c3" type="revolute">
-    <origin
-      xyz="-0.04 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="Body_LF2_c2" />
-    <child
-      link="Body_LF2_c3" />
-    <axis
-      xyz="0 -1 0" />
-    <limit effort="100000" velocity="1.0" lower="0" upper="1.4708" />
-    <dynamics damping="0.0003" friction="0.1" />
-  </joint>
-
-  <link name="Body_LF2_c3">
-    <inertial>
-      <origin
-        xyz="-0.00112468 3.724e-05 0.00681838"
-        rpy="0 0 0" />
-      <mass
-        value="0.0115" />
-      <inertia
-        ixx="7.2e-05"
-        ixy="1e-06"
-        ixz="2.9e-05"
-        iyy="1.67e-05"
-        iyz="1e-06"
-        izz="1.84e-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_c3.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_LF2_c3_col.STL" />
-      </geometry>
-    </collision>
-  </link>
--->
 <!-- RIGHT ARM -->
 <!-- RIGHT ARM -->
 <!-- RIGHT ARM -->
@@ -1017,7 +488,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RSP.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RSP.STL" />
       </geometry>
       <material
         name="">
@@ -1031,7 +502,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RSP_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RSP_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -1071,7 +542,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RSR.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RSR.STL" />
       </geometry>
       <material
         name="">
@@ -1085,7 +556,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RSR_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RSR_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -1126,7 +597,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RSY.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RSY.STL" />
       </geometry>
       <material
         name="">
@@ -1140,7 +611,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RSY_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RSY_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -1180,7 +651,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_REB.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_REB.STL" />
       </geometry>
       <material
         name="">
@@ -1194,7 +665,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_REB_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_REB_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -1234,7 +705,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RWY.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RWY.STL" />
       </geometry>
       <material
         name="">
@@ -1248,7 +719,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RWY_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RWY_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -1288,7 +759,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RWP.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RWP.STL" />
       </geometry>
       <material
         name="">
@@ -1302,7 +773,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RWP_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RWP_col.STL" />
       </geometry>
     </collision>
   </link>
@@ -1342,7 +813,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RWFT.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RWFT.STL" />
       </geometry>
       <material
         name="">
@@ -1356,66 +827,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://drc_plugin/meshes/Body_RWFT_col.STL" />
+          filename="package://mobile_hubo_ow/meshes/Body_RWFT_col.STL" />
       </geometry>
     </collision>
   </link>
-<!--
-  <joint name="RWY2" type="revolute">
-    <origin
-      xyz="0 0 0.0326"
-      rpy="0 0 0" />
-    <parent
-      link="Body_RWFT" />
-    <child
-      link="Body_RF1" />
-    <axis
-      xyz="0 0 1" />
-    <limit effort="100000" velocity="1.0" lower="-5" upper="5" />
-    <dynamics damping="200" friction="200" />
-  </joint>
-
-  <link name="Body_RF1">
-    <inertial>
-      <origin
-        xyz="0.00350179 -0.00500094 -0.108683"
-        rpy="0 0 0" />
-      <mass
-        value="0.894667" />
-      <inertia
-        ixx="0.00087045"
-        ixy="1.448e-05"
-        ixz="-1.064e-05"
-        iyy="0.00103972"
-        iyz="7.89e-06"
-        izz="0.00095329" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_RF1.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://drc_plugin/meshes/Body_RF1_col.STL" />
-      </geometry>
-    </collision>
-  </link>
--->
-
 
   <!--======================= Base ========================-->
   <!--======================= Base ========================-->
@@ -1433,7 +848,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1488,7 +903,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_RWH_mobile.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_RWH_mobile.STL"/>
       </geometry>
       
       <material name="">
@@ -1538,7 +953,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_LWH_mobile.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_LWH_mobile.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1590,7 +1005,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_caster1.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_caster1.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1641,7 +1056,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_caster2.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_caster2.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1691,7 +1106,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_caster3.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_caster3.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1741,7 +1156,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_caster4.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_caster4.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1791,7 +1206,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_casterwheel1.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_casterwheel1.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1841,7 +1256,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_casterwheel2.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_casterwheel2.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1891,7 +1306,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_casterwheel3.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_casterwheel3.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -1941,7 +1356,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://drc_plugin/meshes/Body_WHBASE_casterwheel4.STL"/>
+        <mesh filename="package://mobile_hubo_ow/meshes/Body_WHBASE_casterwheel4.STL"/>
       </geometry>      
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -2045,7 +1460,7 @@ WST-->
       <origin xyz="0.04419 0 0.54" rpy="0 0 0"/>
       <geometry>
 	<mesh
-          filename="package://drc_plugin/meshes/ASM_VISION.STL" />
+          filename="package://mobile_hubo_ow/meshes/ASM_VISION.STL" />
       </geometry>
     </collision>
 
@@ -2053,7 +1468,7 @@ WST-->
       <origin xyz="0.04419 0 0.054" rpy="0 0 0"/>
       <geometry>
 	<mesh
-          filename="package://drc_plugin/meshes/ASM_VISION.STL" />
+          filename="package://mobile_hubo_ow/meshes/ASM_VISION.STL" />
       </geometry>
       <material name="red"/>
     </visual>
@@ -2066,7 +1481,6 @@ WST-->
   </link>
   
    <!-- realsenseD435 RGB-D camera -->
-  
   <joint name="Head_realsense_joint" type="fixed">
     <axis xyz="0 0 1" />
     <origin xyz="0.044 0 0.111" rpy="0 0.5235 0"/>
@@ -2129,7 +1543,7 @@ WST-->
   
   <!-- ZED RGB-D camera : roll is flipped upside-down-->
   <!-- ZED RGB-D camera : origin xyz needs to be revised -->
-  
+
   <joint name="Head_zed_joint" type="fixed">
     <axis xyz="0 0 1" />
     <origin xyz="0.1 0 -0.028" rpy="3.14 0 0"/>
@@ -2189,9 +1603,7 @@ WST-->
     </sensor>
   </gazebo>
 
-
  <!-- velodyne VLP16 lidar -->
-  
   <joint name="Head_velodyne_joint" type="fixed">
     <axis xyz="0 0 1" />
     <origin xyz="0 0 0.036" rpy="0 0 0"/>
@@ -2247,10 +1659,8 @@ WST-->
     </sensor>
    </gazebo>
    
-   
-    <!-- 3DM-GX5 imu -->
-   <!-- 3DM-GX5 imu pose needs revision -->
-   
+  <!-- 3DM-GX5 imu -->
+  <!-- 3DM-GX5 imu pose needs revision -->
   <joint name="Head_imu_joint" type="fixed">
     <axis xyz="0 0 1" />
     <origin xyz="0 0 -0.01" rpy="0 0 0"/>
@@ -2281,7 +1691,6 @@ WST-->
       <pose>0 0 0 0 0 0</pose>
     </sensor>
   </gazebo>
-  
   
 
 </robot>
