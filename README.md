@@ -20,17 +20,35 @@ $ mv * ~/.gazebo/models
 
 * build
 ```sh
-$ cd ~/catkin
+$ cd ~/catkin_ws
+$ catkin_make
+```
+
+* install gazebo plugins
+```sh
+$ sudo apt-get install ros-kinetic-velodyne-gazebo-plugins
+$ cd ~/catkin_ws
 $ catkin_make
 ```
 
 
+
 ### Running Simulation
-* Open terminal and start roscore
+* Open terminal and launch gazebo file
 
 ```sh
 $ roslaunch mobile_hubo_ow mobile_hubo_ow.launch
 ```
+
+* Confirm that the robot is spawned correctly in Gazebo
+* open a new tab to confirm sensor data (example: lidar) is being published
+
+```sh
+$ rostopic list
+$ rostopic echo /mobile_hubo/lidar/velodyne_points
+```
+
+* look at sensor data through Rviz program
 
 
 Maintainers
