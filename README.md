@@ -20,7 +20,7 @@ $ mv * ~/.gazebo/models
 
 * build
 ```sh
-$ cd ~/catkin
+$ cd ~/catkin_ws
 $ catkin_make
 ```
 
