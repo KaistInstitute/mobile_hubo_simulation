@@ -41,6 +41,8 @@ $ roslaunch mobile_hubo_ow mobile_hubo_ow.launch
 ```
 
 * Confirm that the robot is spawned correctly in Gazebo
+[mobilehubo in gazebo](simulation.png)
+
 * open a new tab to confirm sensor data (example: lidar) is being published
 
 ```sh
@@ -49,6 +51,8 @@ $ rostopic echo /mobile_hubo/lidar/velodyne_points
 ```
 
 * look at sensor data through Rviz program
+
+
 
 
 Maintainers
