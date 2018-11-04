@@ -40,8 +40,9 @@ $ catkin_make
 $ roslaunch mobile_hubo_ow mobile_hubo_ow.launch
 ```
 
-* Confirm that the robot is spawned correctly in Gazebo
-[mobilehubo in gazebo](simulation.png)
+* Confirm that the robot is spawned correctly in Gazebo 
+
+![mobilehubo in gazebo](simulation.png)
 
 * open a new tab to confirm sensor data (example: lidar) is being published
 
@@ -52,7 +53,7 @@ $ rostopic echo /mobile_hubo/lidar/velodyne_points
 
 * look at sensor data through Rviz program
 
-
+![mobilehubo sensor data in rviz](rviz.png)
 
 
 Maintainers
