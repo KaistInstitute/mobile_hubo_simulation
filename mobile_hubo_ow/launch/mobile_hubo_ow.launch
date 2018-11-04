@@ -24,9 +24,9 @@
   <!-- turn on the robot_state_publisher for /tf -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen"/>
 
-  <!-- turn on the rviz for visualization 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find drc_plugin)/rviz/drc.rviz"/>
--->
+  <!-- turn on the rviz for visualization -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mobile_hubo_ow)/drc.rviz"/>
+
 
 
 </launch>
