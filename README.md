@@ -24,8 +24,11 @@ $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-* install gazebo plugins
+* update & install gazebo plugin related files
 ```sh
+$ sudo apt-get update
+$ sudo apt-get install ros-kinetic-gazebo-ros-pkgs 
+$ sudo apt-get install libgazebo7-dev
 $ sudo apt-get install ros-kinetic-velodyne-gazebo-plugins
 $ cd ~/catkin_ws
 $ catkin_make
