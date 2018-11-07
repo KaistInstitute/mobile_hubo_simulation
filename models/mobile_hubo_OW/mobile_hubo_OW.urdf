@@ -15,8 +15,8 @@
 
   <joint name="base_footprint_joint" type="floating">
     <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="Body_TORSO" />
-    <child link="base_footprint" />
+    <parent link="base_footprint" />
+    <child link="Body_TORSO" />
   </joint>
 
 
