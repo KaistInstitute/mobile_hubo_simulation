@@ -19,10 +19,13 @@
 
   <!-- set param "robot_description" with URDF model -->
   <arg name="model" default="/home/rainbow/.gazebo/models/mobile_hubo_OW/mobile_hubo_OW.urdf"/>
-  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <param name="robot_description" textfile="$(find mobile_hubo_ow)/urdf/mobile_hubo_OW.urdf" />
 
   <!-- turn on the robot_state_publisher for /tf -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen"/>
+  
+  <!-- Joint_state_publisher for rviz joint info -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"> </node>
 
   <!-- turn on the rviz for visualization -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mobile_hubo_ow)/drc.rviz"/>
