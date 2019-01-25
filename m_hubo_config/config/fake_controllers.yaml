@@ -1,0 +1,49 @@
+controller_list:
+  - name: fake_base_controller
+    joints:
+      - joint2
+      - joint3
+      - joint4
+  - name: fake_Larm_controller
+    joints:
+      - LSP
+      - LSR
+      - LSY
+      - LEB
+      - LWY
+      - LWP
+  - name: fake_Rarm_controller
+    joints:
+      - RSP
+      - RSR
+      - RSY
+      - REB
+      - RWY
+      - RWP
+  - name: fake_Lhand_controller
+    joints:
+      - LWY2
+      - LHAND_a1
+      - LHAND_a2
+      - LHAND_a3
+      - LHAND_b1
+      - LHAND_b2
+      - LHAND_b3
+      - LHAND_c1
+      - LHAND_c2
+      - LHAND_c3
+  - name: fake_Rhand_controller
+    joints:
+      - RWY2
+      - RHAND_a1
+      - RHAND_a2
+      - RHAND_a3
+      - RHAND_b1
+      - RHAND_b2
+      - RHAND_b3
+      - RHAND_c1
+      - RHAND_c2
+      - RHAND_c3
+  - name: fake_Torso_controller
+    joints:
+      - WHBASE

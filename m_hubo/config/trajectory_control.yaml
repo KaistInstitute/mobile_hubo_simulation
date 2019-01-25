@@ -1,0 +1,101 @@
+L_arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - LSP
+    - LSR
+    - LSY
+    - LEB
+    - LWY
+    - LWP
+  gains:
+    LSP: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LSR: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LSY: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LEB: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LWY: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LWP: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LWY2: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+
+R_arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - RSP
+    - RSR
+    - RSY
+    - REB
+    - RWY
+    - RWP
+  gains:
+    RSP: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RSR: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RSY: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    REB: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RWY: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RWP: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+
+Torso_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - WHBASE
+  gains:
+    WHBASE: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+
+
+L_hand_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - LWY2
+    - LHAND_a1
+    - LHAND_a2
+    - LHAND_a3
+    - LHAND_b1
+    - LHAND_b2
+    - LHAND_b3
+    - LHAND_c1
+    - LHAND_c2
+    - LHAND_c3
+  gains:
+    LWY2: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_a1: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_a2: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_a3: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_b1: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_b2: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_b3: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_c1: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_c2: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    LHAND_c3: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+
+R_hand_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - RWY2
+    - RHAND_a1
+    - RHAND_a2
+    - RHAND_a3
+    - RHAND_b1
+    - RHAND_b2
+    - RHAND_b3
+    - RHAND_c1
+    - RHAND_c2
+    - RHAND_c3
+  gains:
+    RWY2: {p: 1000.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_a1: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_a2: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_a3: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_b1: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_b2: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_b3: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_c1: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_c2: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    RHAND_c3: {p: 100.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+
+
+diff_drive_controller:
+  type: "diff_drive_controller/DiffDriveController"
+  left_wheel: 'whbase_to_lwh'
+  right_wheel: 'whbase_to_rwh'
+  pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+  twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+

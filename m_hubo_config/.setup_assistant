@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: m_hubo
+    relative_path: urdf/m_hubo.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/m_hubo.srdf
+  CONFIG:
+    author_name: ShCho
+    author_email: test@mail.com
+    generated_timestamp: 1544594230

@@ -1,0 +1,15 @@
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+
+  <rosparam file="/home/rainbow/catkin_ws/src/m_hubo/config/joint_states.yaml" command="load"/>
+  <node name="joint_controller_spawner" pkg="controller_manager" type="spawner" ns="/" args="joint_state_controller" respawn="false" output="screen" />
+
+  <arg name = "use_tf_static" default = "false"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name = "use_tf_static" value = "$(arg use_tf_static)"/>
+  </node>
+
+</launch>
+
+

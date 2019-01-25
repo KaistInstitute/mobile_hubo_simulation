@@ -1,0 +1,82 @@
+controller_manager_ns: controller_manager
+controller_list:
+- name: L_arm_controller
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints: 
+    - LSP
+    - LSR
+    - LSY
+    - LEB
+    - LWY
+    - LWP
+
+- name: R_arm_controller
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - RSP
+    - RSR
+    - RSY
+    - REB
+    - RWY
+    - RWP
+
+- name: Torso_controller
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - WHBASE
+
+##- name: Wheel_controller
+##  action_ns: follow_joint_trajectory
+##  type: FollowJointTrajectory
+##  default: true
+##  joints:
+##    - whbase_to_lwh
+##    - whbase_to_rwh
+
+#- name: Base_controller
+#  action_ns: follow_joint_trajectory
+#  type: FollowJointTrajectory
+#  default: true
+#  joints:
+#    - joint2
+#    - joint3
+#    - joint4
+
+- name: L_hand_controller
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - LWY2
+    - LHAND_a1
+    - LHAND_a2
+    - LHAND_a3
+    - LHAND_b1
+    - LHAND_b2
+    - LHAND_b3
+    - LHAND_c1
+    - LHAND_c2
+    - LHAND_c3
+
+- name: R_hand_controller
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - RWY2
+    - RHAND_a1
+    - RHAND_a2
+    - RHAND_a3
+    - RHAND_b1
+    - RHAND_b2
+    - RHAND_b3
+    - RHAND_c1
+    - RHAND_c2
+    - RHAND_c3
+

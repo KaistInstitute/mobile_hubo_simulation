@@ -1,0 +1,14 @@
+<launch>
+  <!--trajectory_execution_manager가 찾아야 할 컨트롤러 플러그인 파라미터 설정-->
+  <!--Set Controller Plugin parameters for trajectory_execution_manager-->
+  <arg name = "moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
+  <param name= "moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+
+  <!--Load controllers-->
+  <arg name= "use_controller_manager" value="true" />
+  <param name= "use_controller_manager" value="$(arg use_controller_manager)"/>
+
+  <!--Load Joint controller configuration from YAML files to parameter server-->
+  <rosparam file="$(find m_hubo_config)/config/controllers.yaml"/>
+  <param name= "trajectory_execution/execution_duration_monitoring" value="false"/>
+</launch>

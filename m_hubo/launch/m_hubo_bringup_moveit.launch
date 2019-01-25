@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- Launch Gazebo  -->
+  <include file="$(find m_hubo)/launch/m_hubo_world.launch" />   
+
+  <!-- ros_control seven dof arm launch file -->
+  <include file="$(find m_hubo)/launch/m_hubo_gazebo_states.launch" />  
+
+  <!-- ros_control trajectory control dof arm launch file -->
+  <include file="$(find m_hubo)/launch/m_hubo_trajectory_controller.launch" /> 
+
+  <!-- moveit launch file -->
+  <include file="$(find m_hubo)/launch/moveit_planning_execution.launch" />
+
+</launch>

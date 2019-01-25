@@ -1,0 +1,41 @@
+<launch>
+
+  <!-- first run the gazebo with "use_sim_time" -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find m_hubo)/world/mobile_hubo.world"/>
+    <!--pause gazebo for a while for setting an initial joint positions-->
+    <arg name="paused" value="true"/>
+  </include>
+
+  <!-- spawn the robot model in the gazebo -->
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -file /home/rainbow/catkin_ws/src/m_hubo/urdf/m_hubo.urdf -model m_hubo -x 0 -y 0 -z 0.1
+              -J LSP 0.0 -J LEB -0.5
+    		-J LHAND_a1 0.7
+    		-J LHAND_a2 0.7
+    		-J LHAND_a3 0.7
+	    	-J LHAND_b1 0.7
+	    	-J LHAND_b2 0.7
+	    	-J LHAND_b3 0.7
+	    	-J LHAND_c1 0.7
+	    	-J LHAND_c2 0.7
+	    	-J LHAND_c3 0.7
+              -J RSP 0.0 -J REB -0.5
+	    	-J RHAND_a1 0.7
+	    	-J RHAND_a2 0.7
+	    	-J RHAND_a3 0.7
+	    	-J RHAND_b1 0.7
+	    	-J RHAND_b2 0.7
+	    	-J RHAND_b3 0.7
+	    	-J RHAND_c1 0.7
+	    	-J RHAND_c2 0.7
+	    	-J RHAND_c3 0.7
+              -unpause" respawn="false" output="screen" />
+  <arg name="model" default="/home/rainbow/catkin_ws/src/m_hubo/urdf/m_hubo.urdf"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+
+</launch>
